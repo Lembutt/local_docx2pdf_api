@@ -12,7 +12,7 @@ class ConvertRequest:
     async def process(self):
         start_time = datetime.now()
         try:
-            query = f'libreoffice --headless --convert-to pdf:writer_pdf_Export {data.file} --outdir {data.outdir}'
+            query = f'libreoffice --headless --convert-to pdf:writer_pdf_Export {self.file} --outdir {self.outdir}'
         except Exception as e:
             logger.error(f'Client error: {e}')
             return web.Response(
